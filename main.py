@@ -9,10 +9,11 @@ def get_joke():
     response = requests.get("https://official-joke-api.appspot.com/random_joke")
     if response.status_code == 200:
         joke_data = response.json()
-        joke = f"{joke_data['setup']} - {joke_data['punchline']}"
-        joke_label.config(text=joke)
+        setup = joke_data['setup']
+        punchline = joke_data['punchline']
+        joke_label.configure(text=f"{setup}\n\n{punchline}")
     else:
-        joke_label.config(text="Failed to retrieve a joke.")
+        joke_label.configure(text="Failed to retrieve a joke.")
 
 # Creating the window: Gui
 window = tk.Tk()
