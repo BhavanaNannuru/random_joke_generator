@@ -18,12 +18,12 @@ def get_joke():
 # Creating the window: Gui
 window = tk.Tk()
 window.title("Joke Generator")
-window.geometry("700x400")
+window.geometry("500x400")
 style = Style(theme='darkly')
 window.style = style
 
 # Creating the label widget
-joke_label = tk.Label(text="Click the button to get a joke!", font=("Arial", 16))
+joke_label = tk.Label(text="Click the button to get a joke!", font=("Arial", 16), wraplength=450, justify="center", anchor="center")
 joke_label.place(relx=0.5, rely=0.4, anchor="center")
 
 # Creating the get joke button 
