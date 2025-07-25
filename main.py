@@ -6,7 +6,13 @@ from ttkbootstrap import Style
 
 # Function to fetch a joke on call form the API
 def get_joke():
-    pass
+    response = requests.get("https://official-joke-api.appspot.com/random_joke")
+    if response.status_code == 200:
+        joke_data = response.json()
+        joke = f"{joke_data['setup']} - {joke_data['punchline']}"
+        joke_label.config(text=joke)
+    else:
+        joke_label.config(text="Failed to retrieve a joke.")
 
 # Creating the window: Gui
 window = tk.Tk()
