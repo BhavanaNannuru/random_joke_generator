@@ -20,6 +20,7 @@ Install required dependencies using:
 
 ```bash
 pip install requests ttkbootstrap
+
 ```
 
 ## Planned Enhancements
